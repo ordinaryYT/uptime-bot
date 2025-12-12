@@ -33,7 +33,7 @@ client.once('ready', async () => {
   const channel = await client.channels.fetch(CHANNEL_ID);
   if (channel) {
     const row = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setCustomId('redeploy').setLabel('Redeploy Project').setStyle(ButtonStyle.Danger)
+      new ButtonBuilder().setCustomId('123').setLabel('1234').setStyle(ButtonStyle.Danger)
     );
     await channel.send({ content: 'Click me:', components: [row] });
   }
