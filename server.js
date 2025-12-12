@@ -46,7 +46,7 @@ client.once('ready', async () => {
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isButton()) return;
-  if (interaction.customId === 'redeploy') {
+  if (interaction.customId === 'Restart thingy') {
     try { await fetch(REDEPLOY_URL, { method: 'POST' }); await interaction.reply({ content: 'Redeploy triggered successfully!', ephemeral: true }); }
     catch (err) { console.error('Redeploy failed:', err); await interaction.reply({ content: 'Failed to trigger redeploy.', ephemeral: true }); }
   }
