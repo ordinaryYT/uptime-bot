@@ -35,7 +35,7 @@ client.once('ready', async () => {
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder().setCustomId('redeploy').setLabel('Redeploy Project').setStyle(ButtonStyle.Danger)
     );
-    await channel.send({ content: 'Click to redeploy the project:', components: [row] });
+    await channel.send({ content: 'Click me:', components: [row] });
   }
 
   setInterval(async () => {
