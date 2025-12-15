@@ -14,9 +14,19 @@ const CHANNEL_ID = process.env.CHANNEL_ID;
 const REDEPLOY_URL = process.env.REDEPLOY_URL;
 const PING_URL_SELF = process.env.PING_URL_SELF;
 const PING_URL_OTHER = process.env.PING_URL_OTHER;
+const PING_URL_OTHER_2 = process.env.PING_URL_OTHER_2;
+const PING_URL_OTHER_3 = process.env.PING_URL_OTHER_3;
 const PORT = process.env.PORT || 3000;
 
-if (!DISCORD_TOKEN || !CHANNEL_ID || !REDEPLOY_URL || !PING_URL_SELF || !PING_URL_OTHER) {
+if (
+  !DISCORD_TOKEN ||
+  !CHANNEL_ID ||
+  !REDEPLOY_URL ||
+  !PING_URL_SELF ||
+  !PING_URL_OTHER ||
+  !PING_URL_OTHER_2 ||
+  !PING_URL_OTHER_3
+) {
   console.error('Missing required environment variables.');
   process.exit(1);
 }
@@ -70,7 +80,19 @@ client.once('ready', async () => {
     try {
       await fetch(PING_URL_OTHER);
     } catch (err) {
-      console.error('Ping other failed:', err);
+      console.error('Ping other 1 failed:', err);
+    }
+
+    try {
+      await fetch(PING_URL_OTHER_2);
+    } catch (err) {
+      console.error('Ping other 2 failed:', err);
+    }
+
+    try {
+      await fetch(PING_URL_OTHER_3);
+    } catch (err) {
+      console.error('Ping other 3 failed:', err);
     }
   }, 60 * 1000);
 });
